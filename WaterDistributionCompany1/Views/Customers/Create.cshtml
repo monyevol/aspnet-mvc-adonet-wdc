@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "New Customer Account";
+}
+
+<div class="push-down">
+    <h2>New Customer Account</h2>
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="acntNbr" class="control-label col-md-4 caption">Account #:</label>
+            <div class="col-md-8">
+                @Html.TextBox("AccountNumber", null, htmlAttributes: new { @class = "form-control", id = "acntNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mtrNbr" class="control-label col-md-4 caption">Water Meter:</label>
+
+            <div class="col-md-8">
+                @Html.TextBox("MeterNumber", null, htmlAttributes: new { @class = "form-control", id = "mtrNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">&nbsp;</label>
+            <div class="col-md-8"><input type="text" id="meterDetails" class="form-control" disabled /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="fName" class="control-label col-md-4 caption">First Name:</label>
+            <div class="col-md-8">
+                @Html.TextBox("FirstName", null, htmlAttributes: new { @class = "form-control", id = "fName" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lName" class="control-label col-md-4 caption">Last Name:</label>
+            <div class="col-md-8">
+                @Html.TextBox("LastName", null, htmlAttributes: new { @class = "form-control", id = "lName" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="adrs" class="control-label col-md-4 caption">Address:</label>
+            <div class="col-md-8">
+                @Html.TextBox("Address", null, htmlAttributes: new { @class = "form-control", id = "adrs" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ct" class="control-label col-md-4 caption">City:</label>
+            <div class="col-md-8">
+                @Html.TextBox("City", null, htmlAttributes: new { @class = "form-control", id = "ct" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="county" class="control-label col-md-4 caption">County:</label>
+            <div class="col-md-8">
+                @Html.TextBox("County", null, htmlAttributes: new { @class = "form-control", id = "county" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="state" class="control-label col-md-4 caption">State:</label>
+            <div class="col-md-8">
+                @Html.TextBox("State", null, htmlAttributes: new { @class = "form-control", id = "state" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="zip" class="control-label col-md-4 caption">ZIP Code:</label>
+            <div class="col-md-8">
+                @Html.TextBox("ZIPCode", null, htmlAttributes: new { @class = "form-control", id = "zip" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-5">
+                @Html.ActionLink("Customers", "Index", null, htmlAttributes: new { @class = "water-nav" })
+            </label>
+            <div class="col-md-7">
+                <input type="submit" value="Create Customer Account" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mtrNbr").blur(function (event) {
+            var connection = {
+                url: "/WaterDistribution/WaterMeters.xml",
+                method: "GET",
+                dataType: "xml"
+            };
+            $.ajax(connection).
+                done(function (data) {
+                    var waterMeters = $(data).find("water-meter");
+                    waterMeters.each(function () {
+                        if ($(this).find("meter-number").text() == $("#mtrNbr").val())
+                            $("#meterDetails").val($(this).find("make").text() + " " + $(this).find("model").text() + " (" + $(this).find("meter-size").text() + ")");
+                    });
+                });
+        }); // Lost Focus Event
+    }); // Document.Ready
+</script>

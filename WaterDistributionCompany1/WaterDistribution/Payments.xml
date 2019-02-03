@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<payments>
+  <payment>
+    <payment-id>1</payment-id>
+    <receipt-number>531406</receipt-number>
+    <water-bill-id>2</water-bill-id>
+    <payment-date>08/24/2020</payment-date>
+    <payment-amount>165.75</payment-amount>
+  </payment>
+  <payment>
+    <payment-id>2</payment-id>
+    <receipt-number>370242</receipt-number>
+    <water-bill-id>3</water-bill-id>
+    <payment-date>09/12/2020</payment-date>
+    <payment-amount>198.36</payment-amount>
+  </payment>
+  <payment>
+    <payment-id>3</payment-id>
+    <receipt-number>148164</receipt-number>
+    <water-bill-id>1</water-bill-id>
+    <payment-date>08/27/2020</payment-date>
+    <payment-amount>93.34</payment-amount>
+  </payment>
+  <payment>
+    <payment-id>4</payment-id>
+    <receipt-number>695552</receipt-number>
+    <water-bill-id>4</water-bill-id>
+    <payment-date>09/01/2020</payment-date>
+    <payment-amount>41.31</payment-amount>
+  </payment>
+  <payment>
+    <payment-id>5</payment-id>
+    <receipt-number>585085</receipt-number>
+    <water-bill-id>6</water-bill-id>
+    <payment-date>12/05/2020</payment-date>
+    <payment-amount>163.40</payment-amount>
+  </payment>
+  <payment>
+    <payment-id>6</payment-id>
+    <receipt-number>388505</receipt-number>
+    <water-bill-id>5</water-bill-id>
+    <payment-date>12/10/2020</payment-date>
+    <payment-amount>27.44</payment-amount>
+  </payment>
+</payments>

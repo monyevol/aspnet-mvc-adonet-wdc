@@ -1,0 +1,337 @@
+﻿
+@{
+    ViewBag.Title = "Prepare Customer Water Bill";
+}
+
+<div class="push-down">
+    <h2>Prepare Customer Water Bill</h2>
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="billNbr" class="control-label col-md-4 caption">Water Bill ID:</label>
+            <div class="col-md-8">
+                @Html.TextBox("WaterBillID", null,
+                              htmlAttributes: new { @class = "form-control", id = "billNbr", disabled = "disabled" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="invoiceNbr" class="control-label col-md-4 caption">Invoice #:</label>
+            <div class="col-md-8">
+                @Html.TextBox("InvoiceNumber", null,
+                              htmlAttributes: new { @class = "form-control", id = "invoiceNbr" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="acntNbr" class="control-label col-md-4 caption">Customer Account #:</label>
+            <div class="col-md-8">
+                @Html.TextBox("AccountNumber", null,
+                              htmlAttributes: new { @class = "form-control", id = "acntNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">Customer Name:</label>
+            <div class="col-md-8">
+                @Html.TextBox("CustomerName", null,
+                              new { @class = "form-control", id = "custName", disabled = "disabled" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">Customer Address:</label>
+            <div class="col-md-8">
+                @Html.TextBox("CustomerAddress", null,
+                              new { @class = "form-control", id = "adrs", disabled = "disabled" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4">&nbsp;</label>
+            <div class="col-md-125">
+                @Html.TextBox("CustomerCity", null,
+                              new { @class = "form-control", id = "city", disabled = "disabled" })
+            </div>
+            <div class="col-md-125">
+                @Html.TextBox("CustomerCounty", null,
+                              new { @class = "form-control", id = "county", disabled = "disabled" })
+            </div>
+            <div class="col-md-125">
+                @Html.TextBox("CustomerState", null,
+                              new { @class = "form-control", id = "state", disabled = "disabled" })
+            </div>
+            <div class="col-md-125">
+                @Html.TextBox("CustomerZIPCode", null,
+                              new { @class = "form-control", id = "zip", disabled = "disabled" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">Meter Details:</label>
+            <div class="col-md-125">
+                @Html.TextBox("MeterNumber", null,
+                              new { @class = "form-control", id = "mtrNbr", disabled = "disabled" })
+            </div>
+            <div class="col-md-6">
+                @Html.TextBox("MeterDetails", null,
+                              htmlAttributes: new { @class = "form-control", id = "meterDetails", disabled = "disabled" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <label for="mrsd" class="control-label col-md-4 caption">Meter Reading Start Date:</label>
+            <div class="col-md-2">
+                @Html.TextBox("MeterReadingStartDate", null,
+                              htmlAttributes: new { @class = "form-control", id = "mrsd" })
+            </div>
+            <label for="mred" class="control-label col-md-125 caption">Meter Reading End Date:</label>
+            <div class="col-md-125">
+                @Html.TextBox("MeterReadingEndDate", null,
+                              htmlAttributes: new { @class = "form-control", type = "date", id = "mred" })
+            </div>
+            <label for="days" class="control-label col-md-2 caption">Billing Days:</label>
+            <div class="col-md-1">
+                @Html.TextBox("BillingDays", null, htmlAttributes: new { @class = "form-control", id = "days" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="crs" class="control-label col-md-4 caption">Counter Reading Start:</label>
+            <div class="col-md-2">
+                @Html.TextBox("CounterReadingStart", null, htmlAttributes: new { @class = "form-control", id = "crs" })
+            </div>
+            <label for="cre" class="control-label col-md-125 caption">Current Meter Reading:</label>
+            <div class="col-md-125">
+                @Html.TextBox("CounterReadingEnd", null, htmlAttributes: new { @class = "form-control", id = "cre" })
+            </div>
+            <label for="thcf" class="control-label col-md-2 caption">Total HCF:</label>
+            <div class="col-md-1">
+                @Html.TextBox("TotalHCF", null, htmlAttributes: new { @class = "form-control", id = "thcf" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4">&nbsp;</label>
+            <div class="col-md-2">&nbsp;</div>
+            <label class="control-label col-md-125">&nbsp;</label>
+            <div class="col-md-125">&nbsp;</div>
+            <label for="gallons" class="control-label col-md-2 caption">Total Gallons:</label>
+            <div class="col-md-1">
+                @Html.TextBox("TotalGallons", null, htmlAttributes: new { @class = "form-control", id = "gallons" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="f15HCF" class="control-label col-md-4 caption">1st 15 HCF at $3.6121:</label>
+            <div class="col-md-2">
+                @Html.TextBox("First15HCF", null,
+                              htmlAttributes: new { @class = "form-control", id = "f15HCF" })
+            </div>
+            <label for="next10HCF" class="control-label col-md-125 caption">Next 10 HCF at $3.9180:</label>
+            <div class="col-md-125">
+                @Html.TextBox("Next10HCF", null,
+                              htmlAttributes: new { @class = "form-control", id = "next10HCF" })
+            </div>
+            <label for="remHCF" class="control-label col-md-2 caption">Remaining HCF at $4.2763:</label>
+            <div class="col-md-1">
+                @Html.TextBox("RemainingHCF", null, htmlAttributes: new { @class = "form-control", id = "remHCF" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sewerCharges" class="control-label col-md-4 caption">Sewer Charges:</label>
+            <div class="col-md-2">
+                @Html.TextBox("SewerCharges", null,
+                              htmlAttributes: new { @class = "form-control", id = "sewerCharges" })
+            </div>
+            <label for="stormCharges" class="control-label col-md-125 caption">Storm Charges:</label>
+            <div class="col-md-125">
+                @Html.TextBox("StormCharges", null,
+                              htmlAttributes: new { @class = "form-control", id = "stormCharges" })
+            </div>
+            <label for="wuc" class="control-label col-md-2 caption">Water Usage Charges:</label>
+            <div class="col-md-1">
+                @Html.TextBox("WaterUsageCharges", null, htmlAttributes: new { @class = "form-control", id = "wuc" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4">&nbsp;</label>
+            <div class="col-md-2">&nbsp;</div>
+            <label class="control-label col-md-125">&nbsp;</label>
+            <div class="col-md-125">&nbsp;</div>
+            <label for="totalCharges" class="control-label col-md-2 caption">Total Charges:</label>
+            <div class="col-md-1">
+                @Html.TextBox("TotalCharges", null, htmlAttributes: new { @class = "form-control", id = "totalCharges" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-4">&nbsp;</label>
+            <div class="col-md-125">&nbsp;</div>
+            <label for="localTaxes" class="control-label col-md-125 caption">Local Taxes:</label>
+            <div class="col-md-125">
+                @Html.TextBox("LocalTaxes", null,
+                              htmlAttributes: new { @class = "form-control", id = "localTaxes" })
+            </div>
+            <label for="stateTaxes" class="control-label col-md-125 caption">State Taxes:</label>
+            <div class="col-md-125">
+                @Html.TextBox("StateTaxes", null, htmlAttributes: new { @class = "form-control", id = "stateTaxes" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4">&nbsp;</label>
+            <div class="col-md-125">&nbsp;</div>
+            <label for="pdd" class="control-label col-md-125 caption">Payment Due Date:</label>
+            <div class="col-md-125">
+                @Html.TextBox("PaymentDueDate", null,
+                              htmlAttributes: new { @class = "form-control", type = "date", id = "pdd" })
+            </div>
+            <label for="amtDue" class="control-label col-md-125 caption">Amount Due:</label>
+            <div class="col-md-125">
+                @Html.TextBox("AmountDue", null,
+                              htmlAttributes: new { @class = "form-control", id = "amtDue" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">&nbsp;</label>
+            <div class="col-md-125">&nbsp;</div>
+            <label for="lpdd" class="control-label col-md-125 caption">Late Payment Due Date:</label>
+            <div class="col-md-125">
+                @Html.TextBox("LatePaymentDueDate", null,
+                              htmlAttributes: new { @class = "form-control", id = "lpdd" })
+            </div>
+            <label for="lateAmtDue" class="control-label col-md-125 caption">Late Amount Due:</label>
+            <div class="col-md-125">
+                @Html.TextBox("LateAmountDue", null, htmlAttributes: new { @class = "form-control", id = "lateAmtDue" })
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <label class="control-label col-md-5">
+                @Html.ActionLink("Water Bills", "Index", null, htmlAttributes: new { @class = "water-nav" })
+            </label>
+            <div class="col-md-7">
+                <input type="submit" value="Save Water Bill" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#acntNbr").blur(function (event) {
+            var connection = {
+                method: "GET",
+                dataType: "xml",
+                url: "/WaterDistribution/Customers.xml"
+            };
+            $.ajax(connection).
+                done(function (data) {
+                    var clients = $(data).find("customer");
+                    clients.each(function () {
+                        if ($(this).find("account-number").text() === $("#acntNbr").val()) {
+                            $("#mtrNbr").val($(this).find("meter-number").text());
+                            $("#custName").val($(this).find("first-name").text() + " " + $(this).find("last-name").text());
+                            $("#adrs").val($(this).find("address").text());
+                            $("#city").val($(this).find("city").text());
+                            $("#county").val($(this).find("county").text());
+                            $("#state").val($(this).find("state").text());
+                            $("#zip").val($(this).find("zip-code").text());
+                        }
+                    });
+                });
+
+            connection = {
+                method: "GET",
+                dataType: "xml",
+                url: "/WaterDistribution/WaterMeters.xml"
+            };
+            $.ajax(connection).
+                done(function (data) {
+                    var waterMeters = $(data).find("water-meter");
+                    waterMeters.each(function () {
+                        if ($(this).find("meter-number").text() === $("#mtrNbr").val()) {
+                            $("#meterDetails").val($(this).find("make").text() + " " + $(this).find("model").text() + " (" + $(this).find("meter-size").text() + ")");
+                            $("#mrsd").val($(this).find("date-last-update").text());
+                            $("#crs").val($(this).find("counter-value").text());
+                        }
+                    });
+                });
+
+            connection = {
+                method: "GET",
+                dataType: "xml",
+                url: "/WaterDistribution/WaterBills.xml"
+            };
+            $.ajax(connection).
+                done(function (data) {
+                    var invoices = $(data).find("invoice");
+                    invoices.each(function () {
+                        if ($(this).find("account-number").text() === $("#acntNbr").val()) {
+                            $("#mrsd").val($(this).find("meter-reading-end-date").text());
+                            $("#crs").val($(this).find("counter-reading-end").text());
+                        }
+                    });
+                });
+        }); // Account # Lost Focus
+
+        $("#mred").change(function (event) {
+            var meterReadingStartDate = Date.parse($("#mrsd").val());
+            var meterReadingEndDate = Date.parse($("#mred").val());
+
+            var days = (meterReadingEndDate - meterReadingStartDate) / 86400000;
+
+            $("#days").val(days.toFixed());
+        }); // Meter Reading End Date Lost Focus
+
+        $("#cre").focusout(function (event) {
+            var counterReadingStart = parseInt($("#crs").val());
+            var counterReadingEnd = parseInt($("#cre").val());
+            var totalHCF = counterReadingEnd - counterReadingStart;
+            var gallons = totalHCF * 748; // 748.05
+
+            var first15HCF = totalHCF * 3.612;
+            var next10HCF = 0, remainingHCF = 0;
+
+            if (totalHCF <= 15) {
+                first15HCF = totalHCF * 3.612;
+                next10HCF = 0;
+                remainingHCF = 0;
+            }
+            else if (totalHCF <= 25) {
+                first15HCF = 15 * 3.612;
+                next10HCF = (totalHCF - 15) * 3.918;
+                remainingHCF = 0;
+            }
+            else {
+                first15HCF = 15 * 3.612;
+                next10HCF = 10 * 3.918;
+                remainingHCF = (totalHCF - 25) * 2.2763;
+            }
+
+            var waterUsageCharges = first15HCF + next10HCF + remainingHCF;
+            var sewerCharges      = waterUsageCharges * 0.252;
+            var stormCharges      = waterUsageCharges * 0.0025;
+            var totalCharges      = waterUsageCharges + sewerCharges + stormCharges;
+            var localTaxes        = totalCharges * 0.0152;
+            var stateTaxes        = totalCharges * 0.005;
+            var amountDue         = totalCharges + localTaxes + stateTaxes;
+
+            $("#thcf").val(totalHCF.toFixed());
+            $("#gallons").val(gallons.toFixed());
+            $("#amtDue").val(amountDue.toFixed(2));
+            $("#f15HCF").val(first15HCF.toFixed(2));
+            $("#next10HCF").val(next10HCF.toFixed(2));
+            $("#remHCF").val(remainingHCF.toFixed(2));
+            $("#wuc").val(waterUsageCharges.toFixed(2));
+            $("#stateTaxes").val(stateTaxes.toFixed(2));
+            $("#localTaxes").val(localTaxes.toFixed(2));
+            $("#sewerCharges").val(sewerCharges.toFixed(2));
+            $("#stormCharges").val(stormCharges.toFixed(2));
+            $("#totalCharges").val(totalCharges.toFixed(2));
+            $("#lateAmtDue").val((amountDue + 8.95).toFixed(2));
+        }); // Counter Reading End Lost Focus
+    }); // Document.Ready
+</script>

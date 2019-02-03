@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<water-meters>
+  <water-meter>
+    <meter-id>1</meter-id>
+    <meter-number>392-44-572</meter-number>
+    <make>Constance Technologies</make>
+    <model>TG-4822</model>
+    <meter-size>5/8 Inches</meter-size>
+    <date-last-update>03/31/2018</date-last-update>
+    <counter-value>109998</counter-value>
+  </water-meter>
+  <water-meter>
+    <meter-id>2</meter-id>
+    <meter-number>938-75-869</meter-number>
+    <make>Standard Trend</make>
+    <model>266G</model>
+    <meter-size>1 1/2 Inches</meter-size>
+    <date-last-update>10/22/2017</date-last-update>
+    <counter-value>138012</counter-value>
+  </water-meter>
+  <water-meter>
+    <meter-id>3</meter-id>
+    <meter-number>799-28-461</meter-number>
+    <make>Constance Technologies</make>
+    <model>BD-7000</model>
+    <meter-size>3/4 Inches</meter-size>
+    <date-last-update>05/05/2020</date-last-update>
+    <counter-value>6275</counter-value>
+  </water-meter>
+  <water-meter>
+    <meter-id>4</meter-id>
+    <meter-number>207-94-835</meter-number>
+    <make>Constance Technologies</make>
+    <model>TG-6220</model>
+    <meter-size>5/8 Inches</meter-size>
+    <date-last-update>02/17/2018</date-last-update>
+    <counter-value>118</counter-value>
+  </water-meter>
+  <water-meter>
+    <meter-id>5</meter-id>
+    <meter-number>592-84-957</meter-number>
+    <make>Standard Trend</make>
+    <model>428T</model>
+    <meter-size>3/4 Inches</meter-size>
+    <date-last-update>12/07/2017</date-last-update>
+    <counter-value>49</counter-value>
+  </water-meter>
+  <water-meter>
+    <meter-id>6</meter-id>
+    <meter-number>283-58-958</meter-number>
+    <make>Constance Technologies</make>
+    <model>TR-6224</model>
+    <meter-size>3/4 Inches</meter-size>
+    <date-last-update>04/22/2020</date-last-update>
+    <counter-value>1138</counter-value>
+  </water-meter>
+</water-meters>

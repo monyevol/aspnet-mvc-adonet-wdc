@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Water Bills Payments";
+}
+
+<div class="push-down">
+    <h2 class="common-font bold text-center">Water Bills Payments</h2>
+</div>
+
+<hr />
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="bold">Payment ID</th>
+        <th class="bold">Receipt #</th>
+        <th class="bold">Water Bill ID</th>
+        <th class="bold">Payment Date</th>
+        <th class="bold">Payment Amount</th>
+        <th>@Html.ActionLink("New Bill Payment", "Create", null, htmlAttributes: new { @class = "water-nav" })</th>
+    </tr>
+
+    @if (ViewData["Payments"] != null)
+    {
+        foreach (System.Xml.XmlNode pmt in ViewData["Payments"] as System.Xml.XmlNodeList)
+        {
+            <tr>
+                <td class="text-center">@pmt.FirstChild.InnerText</td>
+                <td>@pmt.FirstChild.NextSibling.InnerText</td>
+                <td>@pmt.FirstChild.NextSibling.NextSibling.InnerText</td>
+                <td>@pmt.FirstChild.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@pmt.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>
+                    @Html.ActionLink("Update", "Edit", new { id = pmt.FirstChild.InnerText }) <span style="color: aquamarine">::</span>
+                    @Html.ActionLink("Review", "Details", new { id = pmt.FirstChild.InnerText }) <span style="color: aquamarine">::</span>
+                    @Html.ActionLink("Remove", "Delete", new { id = pmt.FirstChild.InnerText })
+                </td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Delete Water Meter";
+}
+
+<div class="push-down">
+    <h2>Deleting Water Meter</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt>Water Meter ID:</dt>
+        <dd>@ViewBag.WaterMeterID</dd>
+
+        <dt>Meter #:</dt>
+        <dd>@ViewBag.MeterNumber</dd>
+
+        <dt>Make:</dt>
+        <dd>@ViewBag.Make</dd>
+
+        <dt>Model:</dt>
+        <dd>@ViewBag.Model</dd>
+
+        <dt>Meter Size:</dt>
+        <dd>@ViewBag.MeterSize</dd>
+
+        <dt>Date Last Update:</dt>
+        <dd>@ViewBag.DateLastUpdate</dd>
+
+        <dt>Counter Value:</dt>
+        <dd>@ViewBag.CounterValue</dd>
+    </dl>
+
+    <h3 class="common-font caption">Are you sure you want to remove this water meter from the system?</h3>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete this Water Meter" class="btn btn-primary" /> |
+            @Html.ActionLink("Water Meters", "Index", null, new { @class = "water-nav" })
+        </div>
+    }
+</div>

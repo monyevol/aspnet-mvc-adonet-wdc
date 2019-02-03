@@ -1,0 +1,66 @@
+﻿body {
+    background-color: #2b5b8f;
+}
+
+.bold { font-weight: bold; }
+.top-bar { top: 0;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    height: 6.85em;
+    background-color: #203864; }
+.containment { margin: auto;
+    width: 460px; }
+.navbar-inverse { background-color: #001132;
+    border-top: 3px solid #cfdde0;
+    border-bottom: 3px solid #cfdde0; }
+.navbar-fixed-top { top: 6.75em; }
+.jumbotron { padding-bottom: 4px;
+             background-color: #153a62; }
+.col-md-3 h2 { color: #abcbd9;
+    border-bottom: 1px solid #cfdde0; }
+.lead { color: #cfdde0; }
+.col-md-3 p { color: #d5d4c2; }
+.caption { color: lightblue; }
+.control-label { font-weight: 400;
+    font-family: Garamond, Georgia, 'Times New Roman', serif; }
+.copyright { color: #beeeab; }
+.push-down { margin-top: 8em; }
+.push-down h2 { font-weight: 600;
+        font-size: 26px;
+        text-align: center;
+        color: #d5d4c2;
+        font-family: Garamond, Georgia, 'Times New Roman', serif; }
+.push-down h3 { color: #abcbd9; }
+.push-down p { color: #cfdde0; }
+.water-nav { text-decoration: none;
+    color: yellow; }
+.water-nav:link { color: lightcyan; }
+.water-nav:visited { color: aliceblue; }
+.water-nav:active { color: #a8c3ce; }
+.water-nav:hover { color: yellow; }
+.common-font { font-family: Garamond, Georgia, 'Times New Roman', serif; }
+.col-md-125 {
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 12.50%;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .col-md-125 {
+        float: left;
+        width: 12.50%;
+    }
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    color: navy;
+    background-color: azure;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    color: aliceblue;
+    background-color: cornflowerblue;
+}

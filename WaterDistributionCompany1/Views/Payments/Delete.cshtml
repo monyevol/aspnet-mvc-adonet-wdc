@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Delete Bill Payment";
+}
+
+<div class="push-down">
+    <h2>Delete Bill Payment</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt>Payment ID:</dt>
+        <dd>@ViewData["PaymentID"]</dd>
+        <dt>Receipt #:</dt>
+        <dd>@ViewData["ReceiptNumber"]</dd>
+        <dt>Water Bill ID:</dt>
+        <dd>@ViewData["WaterBillID"]</dd>
+        <dt>Payment Date:</dt>
+        <dd>@ViewData["PaymentDate"]</dd>
+        <dt>Payment Amount:</dt>
+        <dd>@ViewData["PaymentAmount"]</dd>
+    </dl>
+
+    <h3 class="common-font caption">Are you sure you want to cancel this payment?</h3>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Cancel this bill payment" class="btn btn-primary" /> |
+            @Html.ActionLink("Water Bills Payments", "Index", null, new { @class = "water-nav" })
+        </div>
+    }
+</div>

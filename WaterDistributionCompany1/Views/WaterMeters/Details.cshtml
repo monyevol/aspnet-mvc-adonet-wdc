@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Water Meter Details";
+}
+
+<div class="push-down">
+    <h2>Water Meter Details</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt class="bold">Meter ID:</dt>
+        <dd>@ViewData["WaterMeterID"]</dd>
+        <dt>Water Meter #:</dt>
+        <dd>@ViewData["MeterNumber"]</dd>
+        <dt>Make:</dt>
+        <dd>@ViewData["Make"]</dd>
+        <dt>Model:</dt>
+        <dd>@ViewData["Model"]</dd>
+        <dt>Meter Size:</dt>
+        <dd>@ViewData["MeterSize"]</dd>
+        <dt>Date Last Update:</dt>
+        <dd>@ViewData["DateLastUpdate"]</dd>
+        <dt>Counter Value:</dt>
+        <dd>@ViewData["CounterValue"]</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit/Update Water Meter Information", "Edit",
+                      new { id = ViewData["WaterMeterID"] }, htmlAttributes: new { @class = "water-nav" }) ::
+    @Html.ActionLink("Water Meters", "Index",
+                     null, new { @class = "water-nav" })
+</p>

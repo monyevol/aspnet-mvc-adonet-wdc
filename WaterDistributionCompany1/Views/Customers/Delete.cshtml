@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Delete Customer Account";
+}
+
+<div class="push-down">
+    <h2>Closing Customer Account</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt>Account ID:</dt>
+        <dd>@ViewBag.AccountID</dd>
+        <dt>Account #:</dt>
+        <dd>@ViewBag.AccountNumber</dd>
+        <dt>Meter #:</dt>
+        <dd>@ViewBag.MeterNumber</dd>
+        <dt>First Name:</dt>
+        <dd>@ViewBag.FirstName</dd>
+        <dt>Last Name:</dt>
+        <dd>@ViewBag.LastName</dd>
+        <dt>Address:</dt>
+        <dd>@ViewBag.Address</dd>
+        <dt>City:</dt>
+        <dd>@ViewBag.City</dd>
+        <dt>County:</dt>
+        <dd>@ViewBag.County</dd>
+        <dt>State:</dt>
+        <dd>@ViewBag.State</dd>
+        <dt>ZIP-Code:</dt>
+        <dd>@ViewBag.ZIPCode</dd>
+    </dl>
+
+    <h3 class="common-font caption">Are you sure you want to close the account of this customer (if you do, the account will disappear from our system)?</h3>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Close this Customer's Account" class="btn btn-primary" /> |
+            @Html.ActionLink("Customers Accounts", "Index", null, new { @class = "water-nav" })
+        </div>
+    }
+</div>

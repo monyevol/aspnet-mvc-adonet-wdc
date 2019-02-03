@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Customers Accounts";
+}
+
+<div class="push-down">
+    <h2>Customers Accounts</h2>
+</div>
+
+<hr />
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="bold">Account ID</th>
+        <th class="bold">Account #</th>
+        <th class="bold">Meter #</th>
+        <th class="bold">First Name</th>
+        <th class="bold">Last Name</th>
+        <th class="bold">Address</th>
+        <th class="bold">City</th>
+        <th class="bold">County</th>
+        <th class="bold">State</th>
+        <th class="bold">ZIP Code</th>
+        <th>@Html.ActionLink("New Customer Account", "Create", null, htmlAttributes: new { @class = "water-nav" })</th>
+    </tr>
+
+    @if (ViewBag.customers != null)
+    {
+        foreach (System.Xml.XmlNode client in ViewBag.Customers as System.Xml.XmlNodeList)
+        {
+            <tr>
+                <td class="text-center">@client.FirstChild.InnerText</td>
+                <td>@client.FirstChild.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@client.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>
+                    @Html.ActionLink("Update", "Edit", new { id = @client.FirstChild.InnerText }) |
+                    @Html.ActionLink("Review", "Details", new { id = @client.FirstChild.InnerText }) |
+                    @Html.ActionLink("Remove", "Delete", new { id = @client.FirstChild.InnerText })
+                </td>
+            </tr>
+        }
+    }
+</table>

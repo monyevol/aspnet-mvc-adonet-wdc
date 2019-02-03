@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Customers Water Bills";
+}
+
+<div class="push-down">
+    <h2 class="common-font bold text-center">Customers Water Bills</h2>
+</div>
+
+<hr />
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="bold text-center" colspan="2">Identification</th>
+        <th class="bold text-center" colspan="4">Meter Reading</th>
+        <th class="bold text-center" colspan="2">Counter Reading</th>
+        <th class="bold text-center" colspan="5">HCF Summary</th>
+        <th class="bold text-center" colspan="4">Charges</th>
+        <th class="bold text-center" colspan="2">Taxes</th>
+        <th class="bold text-center" colspan="4">Payment</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <th class="bold">Bill ID</th>
+        <th class="bold">Invoice #</th>
+        <th class="bold">Account #</th>
+        <th class="bold">Start Date</th>
+        <th class="bold">End Date</th>
+        <th class="bold">Days</th>
+        <th class="bold">Start</th>
+        <th class="bold">End</th>
+        <th class="bold">Total</th>
+        <th class="bold">Gallons</th>
+        <th class="bold">First 15</th>
+        <th class="bold">Next 10</th>
+        <th class="bold">Remaining</th>
+        <th class="bold">Sewer</th>
+        <th class="bold">Storm</th>
+        <th class="bold">Water Usage</th>
+        <th class="bold">Total</th>
+        <th class="bold">Local</th>
+        <th class="bold">State</th>
+        <th class="bold">Due Date</th>
+        <th class="bold">Amount</th>
+        <th class="bold">Late Pmt</th>
+        <th class="bold">Late Amt</th>
+        <th>&nbsp;</th>
+    </tr>
+
+    @if (ViewBag.Invoices != null)
+    {
+        foreach (System.Xml.XmlNode bill in ViewData["Invoices"] as System.Xml.XmlNodeList)
+        {
+            <tr>
+                <td class="text-center">@bill.FirstChild.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@bill.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>
+                    @Html.ActionLink("Update", "Edit", new { id = @bill.FirstChild.InnerText }) <span style="color: aquamarine">::</span>
+                    @Html.ActionLink("Review", "Details", new { id = @bill.FirstChild.InnerText }) <span style="color: aquamarine">::</span>
+                    @Html.ActionLink("Remove", "Delete", new { id = @bill.FirstChild.InnerText })
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<p class="text-center">@Html.ActionLink("New Water Bill", "Create", null, htmlAttributes: new { @class = "water-nav" })</p>

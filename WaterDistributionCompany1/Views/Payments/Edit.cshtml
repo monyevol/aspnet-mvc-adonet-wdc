@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Edit/Update Bill Payment";
+}
+
+<div class="push-down">
+    <h2>Edit/Update Bill Payment</h2>
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-4 caption">Payment ID:</label>
+            <div class="col-md-8">
+                @Html.TextBox("PaymentID", null,
+                              htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="recNbr" class="control-label col-md-4 caption">Receipt #:</label>
+            <div class="col-md-8">
+                @Html.TextBox("ReceiptNumber", null, htmlAttributes: new { @class = "form-control", id = "recNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="billNbr" class="control-label col-md-4 caption">Account #:</label>
+            <div class="col-md-8">
+                @Html.TextBox("WaterBillID", null, htmlAttributes: new { @class = "form-control", id = "billNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pmtDate" class="control-label col-md-4 caption">Payment Date:</label>
+            <div class="col-md-8">
+                @Html.TextBox("PaymentDate", null,
+                              htmlAttributes: new { @class = "form-control", type = "date", id = "pmtDate" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pmtAmt" class="control-label col-md-4 caption">Payment Amount:</label>
+            <div class="col-md-8">
+                @Html.TextBox("PaymentAmount", null, htmlAttributes: new { @class = "form-control", id = "pmtAmt" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-5">
+                @Html.ActionLink("Bills Payments", "Index", null, htmlAttributes: new { @class = "water-nav" })
+            </label>
+            <div class="col-md-7">
+                <input type="submit" value="Update this Payment" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

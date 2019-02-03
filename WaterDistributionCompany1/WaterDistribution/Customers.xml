@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customers>
+  <customer>
+    <account-id>1</account-id>
+    <account-number>9279-570-8394</account-number>
+    <meter-number>799-28-461</meter-number>
+    <first-name>Thomas</first-name>
+    <last-name>Stones</last-name>
+    <address>10252 Broward Ave #D4</address>
+    <city>Frederick</city>
+    <county>Frederick</county>
+    <state>MD</state>
+    <zip-code>21703</zip-code>
+  </customer>
+  <customer>
+    <account-id>2</account-id>
+    <account-number>4820-375-2842</account-number>
+    <meter-number>392-44-572</meter-number>
+    <first-name>Akhil</first-name>
+    <last-name>Koumari</last-name>
+    <address>748 Red Hills Rd</address>
+    <city>Roanoke</city>
+    <county>
+    </county>
+    <state>VA</state>
+    <zip-code>24012</zip-code>
+  </customer>
+  <customer>
+    <account-id>3</account-id>
+    <account-number>7518-302-6895</account-number>
+    <meter-number>207-94-835</meter-number>
+    <first-name>Grace</first-name>
+    <last-name>Brenner</last-name>
+    <address>4299 Peachtree Court</address>
+    <city>Rockville</city>
+    <county>Montgomery</county>
+    <state>MD</state>
+    <zip-code>20853</zip-code>
+  </customer>
+  <customer>
+    <account-id>4</account-id>
+    <account-number>2038-413-9680</account-number>
+    <meter-number>938-75-869</meter-number>
+    <first-name>Amidou</first-name>
+    <last-name>Gomah</last-name>
+    <address>2075 Rose Hills Ave</address>
+    <city>Washington</city>
+    <county>
+    </county>
+    <state>DC</state>
+    <zip-code>20004</zip-code>
+  </customer>
+  <customer>
+    <account-id>5</account-id>
+    <account-number>5938-074-5293</account-number>
+    <meter-number>592-84-957</meter-number>
+    <first-name>Marie</first-name>
+    <last-name>Rath</last-name>
+    <address>582G Dunhill Ave</address>
+    <city>Lanham</city>
+    <county>Prince George</county>
+    <state>MD</state>
+    <zip-code>20706</zip-code>
+  </customer>
+  <customer>
+    <account-id>6</account-id>
+    <account-number>28864153060</account-number>
+    <meter-number>392-44-572</meter-number>
+    <first-name>Janice</first-name>
+    <last-name>Edson</last-name>
+    <address>10304 Rolando Drv</address>
+    <city>Anderson</city>
+    <county>
+    </county>
+    <state>PA</state>
+    <zip-code>17262</zip-code>
+  </customer>
+</customers>

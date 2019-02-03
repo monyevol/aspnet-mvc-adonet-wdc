@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Water Meters";
+}
+
+<div class="push-down">
+    <h2 class="common-font bold text-center">Water Meters</h2>
+</div>
+
+<hr />
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="bold">Meter ID</th>
+        <th class="bold">Meter #</th>
+        <th class="bold">Make</th>
+        <th class="bold">Model</th>
+        <th class="bold">Meter Size</th>
+        <th class="bold">Date Last Update</th>
+        <th class="bold">Counter Value</th>
+        <th>@Html.ActionLink("New Water Meter", "Create", null, htmlAttributes: new { @class = "water-nav" })</th>
+    </tr>
+
+    @if (ViewBag.waterMeters != null)
+    {
+        foreach (System.Xml.XmlNode meter in ViewBag.WaterMeters as System.Xml.XmlNodeList)
+        {
+            <tr>
+                <td class="text-center">@meter.FirstChild.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.NextSibling.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>@meter.FirstChild.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.NextSibling.InnerText</td>
+                <td>
+                    @Html.ActionLink("Update", "Edit", new { id = @meter.FirstChild.InnerText }) :: 
+                    @Html.ActionLink("Review", "Details", new { id = @meter.FirstChild.InnerText }) :: 
+                    @Html.ActionLink("Remove", "Delete", new { id = @meter.FirstChild.InnerText })
+                </td>
+            </tr>
+        }
+    }
+</table>

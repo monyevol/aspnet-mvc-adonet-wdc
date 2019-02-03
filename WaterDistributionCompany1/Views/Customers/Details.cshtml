@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Customer Account Details";
+}
+
+<div class="push-down">
+    <h2>Customer Account Details</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt class="bold">Account ID:</dt>
+        <dd>@ViewBag.AccountID</dd>
+        <dt>Account #:</dt>
+        <dd>@ViewBag.AccountNumber</dd>
+        <dt>Water Meter #</dt>
+        <dd>@ViewBag.MeterNumber</dd>
+        <dt>First Name:</dt>
+        <dd>@ViewBag.FirstName</dd>
+        <dt>Last Name:</dt>
+        <dd>@ViewBag.LastName</dd>
+        <dt>Address:</dt>
+        <dd>@ViewBag.Address</dd>
+        <dt>City:</dt>
+        <dd>@ViewBag.City</dd>
+        <dt>County:</dt>
+        <dd>@ViewBag.County</dd>
+        <dt>State:</dt>
+        <dd>@ViewBag.State</dd>
+        <dt>ZIP Code:</dt>
+        <dd>@ViewBag.ZIPCode</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit/Update Customer Account Details", "Edit",
+                     new { id = @ViewBag.AccountID }, htmlAttributes: new { @class = "water-nav" }) :: 
+    @Html.ActionLink("Customers Accounts", "Index",
+                     null, new { @class = "water-nav" })
+</p>

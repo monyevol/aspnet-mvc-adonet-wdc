@@ -1,0 +1,49 @@
+﻿<div class="jumbotron">
+    <h2>.</h2>
+    <p class="lead">
+        Our water utility company provides energy, greatness, and warmth
+        for a everyday life, a shining life. We provide solutions to families, businesses,
+        and the community.
+    </p>
+
+    <p class="lead">
+        This is the employees portal section of the company. From here,
+        employees can register a new water meter, manage a customer account, or
+        create a water bill.
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Water Meters</h2>
+        <p>
+            Our company uses the most accurate, sophisticated, and environment-friendly
+            water meters on the market.
+        </p>
+        <p>@Html.ActionLink("Water Meters", "Index", "WaterMeters", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Customers</h2>
+        <p>
+            We supply water to individuals, families, small
+            businesses, as well as enterprises or government agencies.
+        </p>
+        <p>@Html.ActionLink("Customers", "Index", "Customers", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Water Bills</h2>
+        <p>
+            Our water rates are very competitive nationwide. We use precise,
+            effective, and strict algorithms when calculating our bills.
+        </p>
+        <p>@Html.ActionLink("Bills/Invoices", "Index", "WaterBills", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Payments</h2>
+        <p>
+            Our payment system is the simplest, the fairest, and the fastest. Our custiomer's service
+            is highly rated.
+        </p>
+        <p>@Html.ActionLink("Bills Payments", "Index", "Payments", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

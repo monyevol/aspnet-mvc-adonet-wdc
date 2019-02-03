@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Delete Water Bill";
+}
+
+<div class="push-down">
+    <h2>Cancel Water Bill</h2>
+</div>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font caption">
+        <dt class="bold">Water Bill ID:</dt>
+        <dd>@ViewData["WaterBillID"]</dd>
+        <dt class="bold">Invoice #:</dt>
+        <dd>@ViewData["InvoiceNumber"]</dd>
+        <dt class="bold">Account #:</dt>
+        <dd>@ViewData["AccountNumber"]</dd>
+        <dt class="bold">Meter Reading Start Date:</dt>
+        <dd>@ViewData["MeterReadingStartDate"]</dd>
+        <dt class="bold">Meter Reading End Date:</dt>
+        <dd>@ViewData["MeterReadingEndDate"]</dd>
+        <dt class="bold">Billing Days:</dt>
+        <dd>@ViewData["BillingDays"]</dd>
+        <dt class="bold">Counter Reading Start:</dt>
+        <dd>@ViewData["CounterReadingStart"]</dd>
+        <dt class="bold">Counter Reading End:</dt>
+        <dd>@ViewData["CounterReadingEnd"]</dd>
+        <dt class="bold">Total HCF:</dt>
+        <dd>@ViewData["TotalHCF"]</dd>
+        <dt class="bold">Total Gallons:</dt>
+        <dd>@ViewData["TotalGallons"]</dd>
+        <dt class="bold">First 15 HCF:</dt>
+        <dd>@ViewData["First15HCF"]</dd>
+        <dt class="bold">Next 10 HCF:</dt>
+        <dd>@ViewData["Next10HCF"]</dd>
+        <dt class="bold">Remaining HCF:</dt>
+        <dd>@ViewData["RemainingHCF"]</dd>
+        <dt class="bold">Sewer Charges:</dt>
+        <dd>@ViewData["SewerCharges"]</dd>
+        <dt class="bold">Storm Charges:</dt>
+        <dd>@ViewData["StormCharges"]</dd>
+        <dt class="bold">Water Usage Charges:</dt>
+        <dd>@ViewData["WaterUsageCharges"]</dd>
+        <dt class="bold">Total Charges:</dt>
+        <dd>@ViewData["TotalCharges"]</dd>
+        <dt class="bold">Local Taxes:</dt>
+        <dd>@ViewData["LocalTaxes"]</dd>
+        <dt class="bold">State Taxes:</dt>
+        <dd>@ViewData["StateTaxes"]</dd>
+        <dt class="bold">Payment Due Date:</dt>
+        <dd>@ViewData["PaymentDueDate"]</dd>
+        <dt class="bold">Amount Due:</dt>
+        <dd>@ViewData["AmountDue"]</dd>
+        <dt class="bold">Late Payment Due Date:</dt>
+        <dd>@ViewData["LatePaymentDueDate"]</dd>
+        <dt class="bold">Late Amount Due:</dt>
+        <dd>@ViewData["LateAmountDue"]</dd>
+    </dl>
+
+    <h3 class="common-font caption">Are you sure you want to cancel this water bill (if you do, the bill will disappear from the system)?</h3>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Cancel this Water Bill" class="btn btn-primary" /> |
+            @Html.ActionLink("Customers Water Bills", "Index", null, new { @class = "water-nav" })
+        </div>
+    }
+</div>
